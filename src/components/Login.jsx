@@ -12,8 +12,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="console_img">
+    <div className="container">
+      <div className="img-container">
         <img
           src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1527&q=80"
           alt="ps5"
@@ -26,6 +26,7 @@ const Login = () => {
           {/* form input */}
           <input
             value={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Email address"
             name="email"
@@ -33,6 +34,7 @@ const Login = () => {
           />
           <input
             value={password}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
             name="password"
@@ -41,12 +43,12 @@ const Login = () => {
           {/* Login Button */}
           <button type="submit">Login</button>
         </form>
-      </div>
 
-      <div>
-        <p>Forgot Password?</p>
-        <span>OR</span>
-        <button className="signup-btn">Sign Up</button>
+        <div>
+          <p>Forgot Password?</p>
+          <span>OR</span>
+          <button className="signup-btn">Sign Up</button>
+        </div>
       </div>
     </div>
   );
