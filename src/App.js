@@ -7,9 +7,18 @@ const App = () => {
   // Set state to handle which form to display
   const [currentForm, setCurrentForm] = useState("Login");
 
+  // Toggle form between Login and Signup
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  };
+
   return (
     <div className="app">
-      {currentForm === "Login" ? <Login /> : <Signup />}
+      {currentForm === "Login" ? (
+        <Login onFormSwitch={toggleForm} />
+      ) : (
+        <Signup onFormSwitch={toggleForm} />
+      )}
     </div>
   );
 };

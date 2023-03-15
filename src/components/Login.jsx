@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({ onFormSwitch }) => {
   // manage email and password state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,13 +41,20 @@ const Login = () => {
             id="password"
           />
           {/* Login Button */}
-          <button type="submit">Login</button>
+          <button type="submit" className="main-btn">
+            Login
+          </button>
         </form>
 
         <div>
           <p>Forgot Password?</p>
           <span>OR</span>
-          <button className="signup-btn">Sign Up</button>
+          <button
+            className="signup-btn"
+            onClick={() => onFormSwitch("Register")}
+          >
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
