@@ -33,6 +33,7 @@ const Login = ({ onFormSwitch }) => {
               placeholder="Email address"
               name="email"
               id="email"
+              required
             />
           </div>
 
@@ -45,6 +46,7 @@ const Login = ({ onFormSwitch }) => {
               placeholder="Password"
               name="password"
               id="password"
+              required
             />
           </div>
 

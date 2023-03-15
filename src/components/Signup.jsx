@@ -39,6 +39,7 @@ const Signup = ({ onFormSwitch }) => {
               placeholder="User Name"
               name="name"
               id="name"
+              required
             />
           </div>
 
@@ -51,6 +52,7 @@ const Signup = ({ onFormSwitch }) => {
               placeholder="Email address"
               name="email"
               id="email"
+              required
             />
           </div>
 
@@ -63,6 +65,7 @@ const Signup = ({ onFormSwitch }) => {
               placeholder="Password"
               name="password"
               id="password"
+              required
             />
           </div>
 
@@ -75,6 +78,7 @@ const Signup = ({ onFormSwitch }) => {
               placeholder="Confirm Password"
               name="passwordConfirmation"
               id="passwordConfirmation"
+              required
             />
           </div>
 
