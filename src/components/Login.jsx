@@ -22,38 +22,49 @@ const Login = ({ onFormSwitch }) => {
 
       <div className="form-input">
         <h1>Login to the site</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           {/* form input */}
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Email address"
-            name="email"
-            id="email"
-          />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Password"
-            name="password"
-            id="password"
-          />
+          <div className="inline-input">
+            <i id="icon" class="ri-mail-unread-line"></i>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email address"
+              name="email"
+              id="email"
+            />
+          </div>
+
+          <div className="inline-input">
+            <i id="icon" class="ri-lock-2-line"></i>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              name="password"
+              id="password"
+            />
+          </div>
+
           {/* Login Button */}
           <button type="submit" className="main-btn">
-            Login
+            Login <i class="ri-arrow-right-line"></i>
           </button>
         </form>
 
         <div>
-          <p>Forgot Password?</p>
-          <span>OR</span>
+          <p className="forgot-p">
+            Forgot Password? <br />
+          </p>
+          <p>OR</p>
+
           <button
-            className="signup-btn"
+            className="signup-btn main-btn"
             onClick={() => onFormSwitch("Register")}
           >
-            Sign Up
+            Sign Up <i class="ri-arrow-right-line"></i>
           </button>
         </div>
       </div>

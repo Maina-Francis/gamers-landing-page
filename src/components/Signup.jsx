@@ -6,6 +6,8 @@ const Signup = ({ onFormSwitch }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  // handle terms and conditions checkbox
+  const [terms, setTerms] = useState(false);
 
   // handleSubmit function to submit form inputs
   const handleSubmit = (e) => {
@@ -24,46 +26,71 @@ const Signup = ({ onFormSwitch }) => {
 
       <div className="form-input">
         <h1>Sign Up to the site</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           {/* form input */}
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="User Name"
-            name="name"
-            id="name"
-          />
+          <div className="inline-input">
+            <i id="icon" class="ri-profile-line">
+              {" "}
+            </i>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="User Name"
+              name="name"
+              id="name"
+            />
+          </div>
 
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Email address"
-            name="email"
-            id="email"
-          />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Password"
-            name="password"
-            id="password"
-          />
+          <div className="inline-input">
+            <i id="icon" class="ri-mail-unread-line"></i>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email address"
+              name="email"
+              id="email"
+            />
+          </div>
 
-          <input
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-            type="password"
-            placeholder="Confirm Password"
-            name="passwordConfirmation"
-            id="passwordConfirmation"
-          />
+          <div className="inline-input">
+            <i id="icon" class="ri-lock-2-line"></i>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              name="password"
+              id="password"
+            />
+          </div>
+
+          <div className="inline-input">
+            <i id="icon" class="ri-lock-2-line"></i>
+            <input
+              value={passwordConfirmation}
+              onChange={(e) => setPasswordConfirmation(e.target.value)}
+              type="password"
+              placeholder="Confirm Password"
+              name="passwordConfirmation"
+              id="passwordConfirmation"
+            />
+          </div>
+
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              onChange={(e) => setTerms(e.target.checked)}
+            />
+            <span className="terms">
+              I accept the Terms of Use and Privacy Policy
+            </span>
+          </div>
 
           {/* Signup Button */}
-          <button type="submit" className="main-btn">
-            Sign Up
+          <button type="submit" className="main-btn signup">
+            Sign Up <i class="ri-arrow-right-line"></i>
           </button>
         </form>
 
