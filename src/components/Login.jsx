@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Login = ({ onFormSwitch }) => {
   // manage email and password state
@@ -8,7 +9,27 @@ const Login = ({ onFormSwitch }) => {
   // handleSubmit function to submit form inputs
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
+
+    // Post New user Signup data to api
+    axios
+      .post(
+        "http://localhost:3001/sessions",
+        {
+          user: {
+            email: email,
+            password: password,
+          },
+        },
+        {
+          withCredentials: true,
+        }
+      )
+      .then((response) => {
+        console.log("Login response", response);
+      })
+      .catch((error) => {
+        console.log("Login error", error);
+      });
   };
 
   return (

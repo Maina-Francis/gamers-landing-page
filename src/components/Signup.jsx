@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Signup = ({ onFormSwitch }) => {
   // manage name, email and password state
@@ -12,7 +13,29 @@ const Signup = ({ onFormSwitch }) => {
   // handleSubmit function to submit form inputs
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
+
+    // Post New user Signup data to api
+    axios
+      .post(
+        "http://localhost:3001/registrations",
+        {
+          user: {
+            name: name,
+            email: email,
+            password: password,
+            password_confirmation: passwordConfirmation,
+          },
+        },
+        {
+          withCredentials: true,
+        }
+      )
+      .then((response) => {
+        console.log("Registration response", response);
+      })
+      .catch((error) => {
+        console.log("Registration error", error);
+      });
   };
 
   return (
@@ -29,9 +52,7 @@ const Signup = ({ onFormSwitch }) => {
         <form onSubmit={handleSubmit} className="form">
           {/* form input */}
           <div className="inline-input">
-            <i id="icon" class="ri-profile-line">
-              {" "}
-            </i>
+            <i id="icon" class="ri-profile-line"></i>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
