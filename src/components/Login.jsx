@@ -1,35 +1,56 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+// import axios from "axios";
+import Success from "./Success";
 
 const Login = ({ onFormSwitch }) => {
   // manage email and password state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
+  const [authenticated, setAuthenticated] = useState(
+    localStorage.getItem("authenticated") || false
+  );
+  // sample user
+  const users = [{ email: "testemail@gmail.com", password: "testpassword" }];
+
   // handleSubmit function to submit form inputs
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log("handle submit fired");
 
-    // Post New user Signup data to api
-    axios
-      .post(
-        "http://localhost:3001/sessions",
-        {
-          user: {
-            email: email,
-            password: password,
-          },
-        },
-        {
-          withCredentials: true,
-        }
-      )
-      .then((response) => {
-        console.log("Login response", response);
-      })
-      .catch((error) => {
-        console.log("Login error", error);
-      });
+    // ##### Find whether user is authorized
+    const account = users.find((user) => user.email === email);
+
+    // Redirect to Success
+    if (account && account.password === password) {
+      localStorage.setItem("authenticated", true);
+      navigate("/success");
+    }
+
+    // // Post New user Signup data to Rails api
+    // axios
+    //   .post(
+    //     "http://localhost:3001/sessions",
+    //     {
+    //       user: {
+    //         email: email,
+    //         password: password,
+    //       },
+    //     },
+    //     {
+    //       withCredentials: true,
+    //     }
+    //   )
+    //   .then((response) => {
+    //     console.log("Login response", response);
+    //   })
+    //   .catch((error) => {
+    //     console.log("Login error", error);
+    //   });
   };
 
   return (
