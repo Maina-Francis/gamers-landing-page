@@ -59,7 +59,12 @@ input {
   width: 250px;
   background-color: #edebe2;
   border: none;
+  padding: 0 15px;
+
   /* margin-right: -2rem; */
+}
+input:focus {
+  outline: none !important;
 }
 
 ::placeholder {
@@ -69,7 +74,7 @@ input {
 #icon {
   background-color: #21485f;
   color: white;
-  padding: 6px;
+  padding: 7px;
   border-radius: 8px;
   /* margin-right: -2rem; */
 }

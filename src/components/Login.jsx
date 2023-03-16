@@ -15,7 +15,10 @@ const Login = ({ onFormSwitch }) => {
   // );
 
   // sample user
-  const users = [{ email: "test@gmail.com", password: "test" }];
+  const users = [
+    { email: "test@gmail.com", password: "test" },
+    { email: "gamer@gmail.com", password: "gamer" },
+  ];
 
   // handleSubmit function to submit form inputs
   const handleSubmit = (e) => {
