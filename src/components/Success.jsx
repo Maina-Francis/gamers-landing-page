@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import React from "react";
 
 const Success = () => {
-  // Protect the Success page
-  const [authenticated, setAuthenticated] = useState(null);
-
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("authenticated");
-
-    if (loggedInUser) {
-      setAuthenticated(loggedInUser);
-    }
-  }, []);
-
-  if (!authenticated) {
-    // Redirect
-    return <Navigate replace to="/login" />;
-  } else {
-    return (
-      <div>
-        <h3>You have successfully logged in!!</h3>
+  return (
+    <div className="page">
+      <h3>You have successfully logged in!!</h3>;
+      <div className="gif">
+        <iframe
+          src="https://giphy.com/embed/U1mBWiStiHyJAw6ayl"
+          width="350px"
+          height="350px"
+          frameBorder="0"
+          class="giphy-embed"
+          title="God-did"
+          allowFullScreen
+        ></iframe>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default Success;

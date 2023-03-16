@@ -1,24 +1,23 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
 import Login from "./components/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Success from "./components/Success";
 import Signup from "./components/Signup";
+import "./App.css";
+import Failed from "./components/Failed";
 
 const App = () => {
-  // Set state to handle which form to display
-  const [currentForm, setCurrentForm] = useState("Login");
-
-  // Toggle form between Login and Signup
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
-
   return (
     <div className="app">
-      {currentForm === "Login" ? (
-        <Login onFormSwitch={toggleForm} />
-      ) : (
-        <Signup onFormSwitch={toggleForm} />
-      )}
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Login />} />
+          <Route path="login" element={<Login />} />
+          <Route path="success" element={<Success />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="failed" element={<Failed />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

@@ -126,6 +126,31 @@ input {
   margin-bottom: 1.5rem;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.failed-login {
+  color: white;
+  margin-top: 2rem;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 5rem;
+  color: #ffffff;
+}
+
+.gif {
+  margin: 0 auto;
+}
+
+iframe {
+  justify-content: center;
+  margin: auto;
+}
+
 /* Mobile phones */
 @media only screen and (max-width: 480px) {
   img {

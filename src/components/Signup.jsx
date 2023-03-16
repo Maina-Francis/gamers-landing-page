@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 const Signup = ({ onFormSwitch }) => {
@@ -9,6 +11,8 @@ const Signup = ({ onFormSwitch }) => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   // handle terms and conditions checkbox
   const [terms, setTerms] = useState(false);
+
+  const navigate = useNavigate();
 
   // handleSubmit function to submit form inputs
   const handleSubmit = (e) => {
@@ -122,7 +126,7 @@ const Signup = ({ onFormSwitch }) => {
         <div>
           <p>
             Already have an account?{" "}
-            <span className="login-here" onClick={() => onFormSwitch("Login")}>
+            <span className="login-here" onClick={() => navigate("/login")}>
               Login here.
             </span>
           </p>
