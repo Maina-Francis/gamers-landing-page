@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Gaming Website Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the landing page for a gaming website built using React! This project is a simple web application that requires users to enter their email address and password to login. If the user does not exist in the system, an error page is displayed. The UI was [designed using Figma](https://www.figma.com/file/w2XPHexCfFbH25a8CbXfjW/Gamers-Site-Login-Page?node-id=2%3A112&t=jkPv8ZsfoYhbSFN8-1), with HTML5, CSS3, React, and JavaScript being used to build the app.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* **[Installation](#installation)**
+* **[Usage](#usage)**
+* **[Features](#features)**
+* **[Technologies Used](#technologies-used)**
+* **[Future Plans](#future-plans)**
 
-### `npm start`
+### Installation
+To use this application, you will need to have Node.js installed on your machine. If you do not have Node.js installed, you can download it from the official website: https://nodejs.org/en/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Once you have Node.js installed, follow the steps below to install the application:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository using the following command: `git clone git@github.com:Maina-Francis/gamers-landing-page.git`
+2. Navigate to the project directory using cd gaming-website-landing-page
+3. Run `npm install` to install the dependencies
 
-### `npm test`
+### Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To start the application, run `npm start` in the project directory. This will start the application in your default browser at http://localhost:3000.
 
-### `npm run build`
+To login to the application, enter one of the following valid login details:
+```
+Email: gamer@gmail.com Password: gamer
+Email: test@gmail.com Password: test
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you enter invalid login details, an error page will be displayed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* User login with email and password
+* Error page for invalid login details
+* User details stored in local storage cookies for easier login next time
+* Responsive UI designed with Figma
 
-### `npm run eject`
+### Technologies Used
+* HTML5
+* CSS3
+* React
+* JavaScript
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Plans
+In the near future, we plan to integrate this application with a [Rails backend](https://github.com/Maina-Francis/gamers-authentication) to provide more functionality to users. Stay tuned for updates!
